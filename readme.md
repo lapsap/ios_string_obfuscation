@@ -21,7 +21,7 @@ Way to use the library,
 2. add this line of code into the file u want to obfuscate
 	* `let o = Obfuscator(withSalt: [AppDelegate.self, NSObject.self, NSString.self])` 
 	* change the salt key to your own preference
-	* Strings that want to be obfuscated need to be inside the tag /*lapsap*/"<string>"/*lapsap*/
+	* Strings that want to be obfuscated need to be inside the tag `/*lapsap*/"<string>"/*lapsap*/`
 3. edit parser.py, change cipher to the salt key of your choise
 4. Give excutable permission `chmod +x parser.py`
 5. `./parser.py <filename>`
