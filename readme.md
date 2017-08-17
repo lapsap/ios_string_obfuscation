@@ -15,15 +15,16 @@ Way to use the library,
 	2. Obfuscator.swift
 
 ### How to use
-	* must be in same directory 
+* must be in same directory 
 
-	1. include Obfuscator.swift into xcode project
-	2. add this line of code into the file u want to obfuscate
+1. include Obfuscator.swift into xcode project
+2. add this line of code into the file u want to obfuscate
 	* `let o = Obfuscator(withSalt: [AppDelegate.self, NSObject.self, NSString.self])` 
 	* change the salt key to your own preference
-	3. edit parser.py, change cipher to the salt key of your choise
-	4. Give excutable permission `chmod +x parser.py`
-	5. `./parser.py <filename>`
+	* Strings that want to be obfuscated need to be inside the tag /*lapsap*/"<string>"/*lapsap*/
+3. edit parser.py, change cipher to the salt key of your choise
+4. Give excutable permission `chmod +x parser.py`
+5. `./parser.py <filename>`
 
 ![image](http://i.imgur.com/9cj9pNO.png)
 
