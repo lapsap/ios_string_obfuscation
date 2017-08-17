@@ -25,7 +25,7 @@ Way to use the library,
 	4. Give excutable permission `chmod +x parser.py`
 	5. `./parser.py <filename>`
 
-	![](http://i.imgur.com/9cj9pNO.png)
+	![image](http://i.imgur.com/9cj9pNO.png)
 
 ### output 
 	1. <file>      (obfuscated file)
