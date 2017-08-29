@@ -16,6 +16,12 @@ def salt(input):
         encrypted += ", " + str(list[i])
     encrypted += "] )"
     return encrypted
+def check_str(input):
+    tmp = re.match(r'(.*)\/\*lapsap\*\/"(.*)"\/\*lapsap\*\/(.*)', input)
+    if tmp:
+        return tmp.group(1) + salt(tmp.group(2)) + tmp.group(3) + '\n'
+    else:
+        return input
 
 def smth(filename):
     file = open(filename,"r")
@@ -23,11 +29,12 @@ def smth(filename):
     bla = ""
     for line in file:
         file_ori.write(line)
-        tmp = re.match(r'(.*)\/\*lapsap\*\/"(.*)"\/\*lapsap\*\/(.*)', line)
-        if tmp:
-            bla += tmp.group(1) + salt(tmp.group(2)) + tmp.group(3) + '\n'
-        else:
-            bla += line
+        t1 = t2 = line
+        t1 = check_str(line)
+        while ( t1 != t2 ):
+            t2 = t1 
+            t1 = check_str(t1)
+        bla += t1
     file.close()
     file_ori.close()
     file = open(filename,"w")
